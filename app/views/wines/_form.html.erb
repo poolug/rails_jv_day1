@@ -11,9 +11,15 @@
     </div>
   <% end %>
 
-  <div class="field">
-    <%= form.label :name %>
-    <%= form.text_field :name %>
+  <div class="form-group">
+    <%= form.label :name, "Vino" %>
+    <%= form.text_field :name, class:"form-control mr-sm-3" %>
+  </div>
+
+  <div id="wine_strains" class="form-group">
+    <div class="links form-inline">
+      <%= link_to_add_association 'Agregar cepa', form, :wines_strains %>
+    </div>
   </div>
 
   <div class="actions">
