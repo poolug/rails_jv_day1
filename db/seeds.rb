@@ -18,11 +18,24 @@
     # Strain_id  .intransitiva que son 2 modelos y 3 tablas
     # porcentage .transitiva que son 3 modelos y 3 tablas
 
+Wine.all.destroy_all
+
 5.times do |i|
-    Wine.create!(name: "Vino #{i+1}")
-    p "Vino #{i+1}"
+  Wine.create!(name: "Vino #{i+1}")
+  "Vino #{i+1}"
 end
 
+Strain.all.destroy_all
+
 10.times do |i|
-    Strain.create!(name: "Cepa #{i+1}")
+  Strain.create!(name: "Cepa #{i+1}")
+end
+
+User.all.destroy_all
+
+#Crea usuario catador (taster)
+User.create!(email: "catador@mail.com", password: '123456', password_confirmation: '123456', taster: true)
+
+2.times do |i|
+  User.create!(email: "user#{i+1}@mail.com", password: "123456", password_confirmation: "123456", taster: false)
 end

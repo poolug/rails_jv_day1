@@ -18,7 +18,10 @@ body {
   margin: 0;
 }
 
-a:hover {
-  background-color:whitesmoke;
-  color: black;
+nav a:hover {
+  background-color: inherit;
+}
+
+nav span, a {
+  color: white !important
 }

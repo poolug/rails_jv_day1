@@ -1,4 +1,5 @@
 class StrainsController < ApplicationController
+  before_action :authorize_taster!
   before_action :set_strain, only: %i[ show edit update destroy ]
 
   # GET /strains or /strains.json
