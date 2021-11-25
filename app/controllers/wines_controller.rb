@@ -40,6 +40,7 @@ class WinesController < ApplicationController
 
   # PATCH/PUT /wines/1 or /wines/1.json
   def update
+    # byebug
     respond_to do |format|
       if @wine.update(wine_params)
         format.html { redirect_to @wine, notice: "Wine was successfully updated." }
@@ -68,6 +69,6 @@ class WinesController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def wine_params
-      params.require(:wine).permit(:name, wines_strains_attributes: [:id, :strain_id, :porcentage, :_destroy])
+      params.require(:wine).permit(:name, wines_strains_attributes: [:id, :strain_id, :porcentage, :_destroy], wines_oenologists_attributes: [:id, :oenologist_id, :note, :_destroy])
     end
 end

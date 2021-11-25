@@ -4,6 +4,7 @@
 			<tr>
 				<th>Nombre</th>
 				<th>Cepas</th>
+				<th>Oenologist</th>
 				<th colspan="3"></th>
 			</tr>
 		</thead>
@@ -15,6 +16,12 @@
 					<td><% wine.wines_strains.each_with_index do |wine_strain, index| %>
 						<ul>
 							<li> <%= "Cepa #{index + 1}: #{wine_strain.strain.name} | #{wine_strain.porcentage.to_i}%" %>
+						</ul>
+						<% end %>
+					</td>
+					<td><% wine.wines_oenologists.each_with_index do |wines_oenologists, index| %>
+						<ul>
+							<li> <%= "#{wines_oenologists.oenologist.name} | #{wines_oenologists.note}" %>
 						</ul>
 						<% end %>
 					</td>
